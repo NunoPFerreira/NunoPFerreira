@@ -1,0 +1,254 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 260" width="1000" height="260" role="img" aria-label="Nuno Ferreira — Software Engineer at Critical Techworks, BMW Group">
+  <title>Nuno Ferreira — Software Engineer at Critical Techworks (BMW Group)</title>
+
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#050B18"/>
+      <stop offset="55%" stop-color="#0A1730"/>
+      <stop offset="100%" stop-color="#04294D"/>
+    </linearGradient>
+
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0066B1"/>
+      <stop offset="50%" stop-color="#2FA9E8"/>
+      <stop offset="100%" stop-color="#8FD4FF"/>
+    </linearGradient>
+
+    <linearGradient id="streak" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#2FA9E8" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#8FD4FF" stop-opacity="0.9"/>
+    </linearGradient>
+
+    <linearGradient id="sheen" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.07"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#2FA9E8" stroke-opacity="0.12" stroke-width="1"/>
+    </pattern>
+
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <clipPath id="card">
+      <rect x="0" y="0" width="1000" height="260" rx="18"/>
+    </clipPath>
+
+    <!-- Base width is the full text: if SMIL is unavailable the subtitle
+         still renders in full rather than staying clipped to nothing. -->
+    <clipPath id="typeClip">
+      <rect x="60" y="140" width="470" height="34">
+        <animate attributeName="width" values="0;0;470;470" keyTimes="0;0.18;0.62;1" dur="6s" repeatCount="indefinite"/>
+      </rect>
+    </clipPath>
+  </defs>
+
+  <style>
+    /* backwards fill holds the "from" frame during the delay, while the
+       resting value stays opacity 1 for renderers that ignore animations. */
+    .fade-up {
+      animation: fadeUp 1s cubic-bezier(0.2, 0.7, 0.3, 1) backwards;
+    }
+    .d1 { animation-delay: 0.15s; }
+    .d2 { animation-delay: 0.45s; }
+    .d3 { animation-delay: 0.75s; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .streak { animation: dash 4.5s linear infinite; }
+    .s2 { animation-duration: 6s;   animation-delay: 0.8s; }
+    .s3 { animation-duration: 3.6s; animation-delay: 1.6s; }
+    .s4 { animation-duration: 7s;   animation-delay: 2.4s; }
+    .s5 { animation-duration: 5.2s; animation-delay: 3.1s; }
+
+    @keyframes dash {
+      from { transform: translateX(-320px); }
+      to   { transform: translateX(1320px); }
+    }
+
+    /* The car is parked at its base transform when animations are off,
+       so it stays a sensible part of the composition either way. */
+    /* Range is in the scaled group's units, and is wide enough that the car is
+       fully off-canvas at both ends instead of popping in on loop restart. */
+    .car { animation: drive 10s linear infinite; }
+    @keyframes drive {
+      from { transform: translateX(-560px); }
+      to   { transform: translateX(1300px); }
+    }
+
+    .sheen { animation: sweep 7s ease-in-out infinite; }
+    @keyframes sweep {
+      0%, 100% { transform: translateX(-600px); }
+      55%      { transform: translateX(1000px); }
+    }
+
+    .grid-drift { animation: drift 18s linear infinite; }
+    @keyframes drift {
+      from { transform: translate(0, 0); }
+      to   { transform: translate(-40px, -40px); }
+    }
+
+    .cursor { animation: blink 1s step-end infinite; }
+    @keyframes blink {
+      0%, 49%  { opacity: 1; }
+      50%, 99% { opacity: 0; }
+    }
+
+    .pulse { animation: pulse 2.6s ease-in-out infinite; transform-origin: 74px 208px; }
+    @keyframes pulse {
+      0%, 100% { opacity: 0.45; transform: scale(1); }
+      50%      { opacity: 1;    transform: scale(1.35); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .fade-up { opacity: 1; animation: none; }
+      .streak, .sheen, .grid-drift, .cursor, .pulse, .car { animation: none; }
+    }
+  </style>
+
+  <g clip-path="url(#card)">
+    <rect width="1000" height="260" fill="url(#bg)"/>
+
+    <g class="grid-drift" opacity="0.6">
+      <rect x="-40" y="-40" width="1080" height="340" fill="url(#grid)"/>
+    </g>
+
+    <!-- BMW Group colour bar: light blue / dark blue / red -->
+    <g class="fade-up d1">
+      <rect x="0" y="0" width="1000" height="4" fill="#0066B1"/>
+      <rect x="0" y="0" width="333" height="4" fill="#8FD4FF"/>
+      <rect x="667" y="0" width="333" height="4" fill="#E4002B"/>
+    </g>
+
+    <!-- Motion streaks -->
+    <g opacity="0.75">
+      <rect class="streak"    x="-320" y="52"  width="300" height="2" fill="url(#streak)" rx="1"/>
+      <rect class="streak s2" x="-320" y="96"  width="220" height="2" fill="url(#streak)" rx="1" opacity="0.6"/>
+      <rect class="streak s3" x="-320" y="196" width="260" height="2" fill="url(#streak)" rx="1" opacity="0.7"/>
+      <rect class="streak s4" x="-320" y="228" width="180" height="2" fill="url(#streak)" rx="1" opacity="0.5"/>
+      <rect class="streak s5" x="-320" y="14"  width="340" height="2" fill="url(#streak)" rx="1" opacity="0.45"/>
+    </g>
+
+    <!-- Road line -->
+    <rect x="0" y="250" width="1000" height="1" fill="#2FA9E8" opacity="0.28"/>
+
+    <!-- Car crossing behind the text. The outer group holds the position so the
+         CSS transform on .car (which would override a transform attribute) is
+         free to handle only the horizontal travel. -->
+    <g transform="translate(200, 250) scale(0.88)">
+      <g class="car" opacity="0.5">
+        <ellipse cx="86" cy="-2" rx="96" ry="6" fill="#0066B1" opacity="0.25"/>
+
+        <path d="M 172 -14
+                 C 172 -24, 164 -28, 150 -30
+                 L 120 -32
+                 C 110 -46, 92 -53, 70 -53
+                 C 50 -53, 36 -46, 28 -33
+                 L 10 -30
+                 C 2 -28, 0 -22, 0 -14
+                 L 0 -8
+                 Q 0 -4, 8 -4
+                 L 164 -4
+                 Q 172 -4, 172 -8
+                 Z"
+              fill="#050B18" stroke="url(#accent)" stroke-width="2" stroke-linejoin="round"/>
+
+        <path d="M 116 -33 C 107 -45, 92 -50, 74 -50 L 74 -33 Z" fill="#8FD4FF" opacity="0.2"/>
+        <path d="M 68 -50 C 52 -50, 40 -44, 33 -33 L 68 -33 Z" fill="#8FD4FF" opacity="0.2"/>
+
+        <ellipse cx="166" cy="-21" rx="5" ry="3.2" fill="#8FD4FF" filter="url(#glow)"/>
+        <rect x="1" y="-24" width="5" height="4" rx="1" fill="#E4002B" opacity="0.9"/>
+
+        <g transform="translate(140, -12)">
+          <circle r="12" fill="#050B18" stroke="url(#accent)" stroke-width="2"/>
+          <g>
+            <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="0.5s" repeatCount="indefinite"/>
+            <path d="M 0 -8 L 0 8 M -8 0 L 8 0 M -5.7 -5.7 L 5.7 5.7 M -5.7 5.7 L 5.7 -5.7"
+                  stroke="#2FA9E8" stroke-width="1.2" opacity="0.85"/>
+          </g>
+          <circle r="2.6" fill="#8FD4FF"/>
+        </g>
+
+        <g transform="translate(42, -12)">
+          <circle r="12" fill="#050B18" stroke="url(#accent)" stroke-width="2"/>
+          <g>
+            <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="0.5s" repeatCount="indefinite"/>
+            <path d="M 0 -8 L 0 8 M -8 0 L 8 0 M -5.7 -5.7 L 5.7 5.7 M -5.7 5.7 L 5.7 -5.7"
+                  stroke="#2FA9E8" stroke-width="1.2" opacity="0.85"/>
+          </g>
+          <circle r="2.6" fill="#8FD4FF"/>
+        </g>
+      </g>
+    </g>
+
+    <!-- Accent rule beside the name -->
+    <rect class="fade-up d1" x="60" y="72" width="6" height="46" rx="3" fill="url(#accent)" filter="url(#glow)"/>
+
+    <text class="fade-up d1" x="82" y="108"
+          font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif"
+          font-size="46" font-weight="700" fill="#FFFFFF" letter-spacing="0.5">
+      Nuno Ferreira
+    </text>
+
+    <!-- Typed subtitle -->
+    <g clip-path="url(#typeClip)">
+      <text x="60" y="166"
+            font-family="'Fira Code', 'SF Mono', Consolas, 'Courier New', monospace"
+            font-size="20" font-weight="500" fill="#8FD4FF">
+        Software Engineer @ Critical Techworks
+      </text>
+    </g>
+    <!-- x tracks the same keyTimes as typeClip so the caret rides the text edge -->
+    <rect class="cursor" x="520" y="146" width="10" height="24" fill="#8FD4FF">
+      <animate attributeName="x" values="60;60;520;520" keyTimes="0;0.18;0.62;1" dur="6s" repeatCount="indefinite"/>
+    </rect>
+
+    <!-- Status line -->
+    <g class="fade-up d3">
+      <circle class="pulse" cx="74" cy="208" r="5" fill="#8FD4FF"/>
+      <text x="92" y="214"
+            font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif"
+            font-size="16" fill="#A9C4DE" letter-spacing="1.6">
+        BMW GROUP · BRAGA, PORTUGAL
+      </text>
+    </g>
+
+    <!-- Roundel-inspired mark. Position lives on the outer group: the fadeUp
+         keyframes set `transform`, which would override a transform attribute
+         on the same element and drop the mark at the origin. -->
+    <g transform="translate(838, 130)">
+    <g class="fade-up d2" opacity="0.95">
+      <circle r="62" fill="none" stroke="#0066B1" stroke-width="1.5" opacity="0.5"/>
+      <circle r="52" fill="#050B18" stroke="url(#accent)" stroke-width="2.5"/>
+      <path d="M 0 -40 A 40 40 0 0 1 40 0 L 0 0 Z" fill="#8FD4FF" opacity="0.16"/>
+      <path d="M 0 40 A 40 40 0 0 1 -40 0 L 0 0 Z" fill="#8FD4FF" opacity="0.16"/>
+      <circle r="40" fill="none" stroke="#2FA9E8" stroke-width="1" opacity="0.6"/>
+      <circle r="62" fill="none" stroke="#8FD4FF" stroke-width="2" stroke-linecap="round"
+              stroke-dasharray="40 350" opacity="0.9">
+        <animateTransform attributeName="transform" type="rotate"
+                          from="0" to="360" dur="8s" repeatCount="indefinite"/>
+      </circle>
+      <text x="0" y="7" text-anchor="middle"
+            font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif"
+            font-size="20" font-weight="700" fill="#FFFFFF" letter-spacing="2">
+        NF
+      </text>
+    </g>
+    </g>
+
+    <!-- Sheen sweep -->
+    <rect class="sheen" x="0" y="0" width="240" height="260" fill="url(#sheen)"/>
+
+    <rect x="0.5" y="0.5" width="999" height="259" rx="18" fill="none" stroke="#2FA9E8" stroke-opacity="0.25"/>
+  </g>
+</svg>
