@@ -1,0 +1,177 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 360" width="1000" height="360" role="img" aria-label="Tech stack: Java, TypeScript, JavaScript, Spring Boot, Node.js, React, Docker, Git">
+  <title>Tech stack — Java, TypeScript, JavaScript, Spring Boot, Node.js, React, Docker, Git</title>
+
+  <defs>
+    <linearGradient id="tbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#050B18"/>
+      <stop offset="55%" stop-color="#0A1730"/>
+      <stop offset="100%" stop-color="#04294D"/>
+    </linearGradient>
+
+    <linearGradient id="taccent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0066B1"/>
+      <stop offset="50%" stop-color="#2FA9E8"/>
+      <stop offset="100%" stop-color="#8FD4FF"/>
+    </linearGradient>
+
+    <linearGradient id="tscan" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2FA9E8" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#8FD4FF" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#2FA9E8" stop-opacity="0"/>
+    </linearGradient>
+
+    <pattern id="tgrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#2FA9E8" stroke-opacity="0.10" stroke-width="1"/>
+    </pattern>
+
+    <clipPath id="tcard">
+      <rect x="0" y="0" width="1000" height="360" rx="14"/>
+    </clipPath>
+
+    <!--
+      One reveal window per line. Each base width is the FULL width, so if a
+      renderer ignores SMIL the whole listing still shows instead of staying
+      clipped to nothing. The animation drives width 0 -> full on a shared
+      14s timeline, which is what produces the "typing" effect.
+    -->
+    <clipPath id="clipCmd">
+      <rect x="200" y="72" width="176" height="30">
+        <animate attributeName="width" values="0;0;176;176" keyTimes="0;0.02;0.12;1" dur="14s" repeatCount="indefinite"/>
+      </rect>
+    </clipPath>
+    <clipPath id="clipL2">
+      <rect x="36" y="106" width="700" height="30">
+        <animate attributeName="width" values="0;0;700;700" keyTimes="0;0.130;0.145;1" dur="14s" repeatCount="indefinite"/>
+      </rect>
+    </clipPath>
+    <clipPath id="clipL3">
+      <rect x="36" y="140" width="700" height="30">
+        <animate attributeName="width" values="0;0;700;700" keyTimes="0;0.155;0.170;1" dur="14s" repeatCount="indefinite"/>
+      </rect>
+    </clipPath>
+    <clipPath id="clipL4">
+      <rect x="36" y="174" width="700" height="30">
+        <animate attributeName="width" values="0;0;700;700" keyTimes="0;0.180;0.195;1" dur="14s" repeatCount="indefinite"/>
+      </rect>
+    </clipPath>
+    <clipPath id="clipL5">
+      <rect x="36" y="208" width="700" height="30">
+        <animate attributeName="width" values="0;0;700;700" keyTimes="0;0.205;0.220;1" dur="14s" repeatCount="indefinite"/>
+      </rect>
+    </clipPath>
+    <clipPath id="clipL6">
+      <rect x="36" y="242" width="700" height="30">
+        <animate attributeName="width" values="0;0;700;700" keyTimes="0;0.230;0.245;1" dur="14s" repeatCount="indefinite"/>
+      </rect>
+    </clipPath>
+    <clipPath id="clipL7">
+      <rect x="36" y="276" width="700" height="30">
+        <animate attributeName="width" values="0;0;700;700" keyTimes="0;0.255;0.270;1" dur="14s" repeatCount="indefinite"/>
+      </rect>
+    </clipPath>
+    <clipPath id="clipL8">
+      <rect x="36" y="310" width="700" height="30">
+        <animate attributeName="width" values="0;0;700;700" keyTimes="0;0.285;0.300;1" dur="14s" repeatCount="indefinite"/>
+      </rect>
+    </clipPath>
+  </defs>
+
+  <style>
+    .mono {
+      font-family: 'Fira Code', 'JetBrains Mono', 'SF Mono', Consolas, 'Courier New', monospace;
+      font-size: 20px;
+    }
+    .ui {
+      font-family: 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+    .key   { fill: #8FD4FF; }
+    .str   { fill: #9FE8C0; }
+    .punct { fill: #6B8AAD; }
+    .cmd   { fill: #FFFFFF; }
+    .user  { fill: #2FA9E8; font-weight: 600; }
+
+    .cursor { animation: tblink 1s step-end infinite; }
+    @keyframes tblink {
+      0%, 49%  { opacity: 1; }
+      50%, 99% { opacity: 0; }
+    }
+
+    .scan { animation: tsweep 14s linear infinite; }
+    @keyframes tsweep {
+      0%        { transform: translateY(-120px); }
+      45%, 100% { transform: translateY(400px); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .cursor, .scan { animation: none; }
+    }
+  </style>
+
+  <g clip-path="url(#tcard)">
+    <rect width="1000" height="360" fill="url(#tbg)"/>
+    <rect width="1000" height="360" fill="url(#tgrid)"/>
+
+    <!-- Title bar -->
+    <rect x="0" y="0" width="1000" height="46" fill="#050B18" fill-opacity="0.75"/>
+    <circle cx="28" cy="23" r="6" fill="#E4002B" opacity="0.85"/>
+    <circle cx="50" cy="23" r="6" fill="#2FA9E8" opacity="0.6"/>
+    <circle cx="72" cy="23" r="6" fill="#8FD4FF" opacity="0.75"/>
+    <text class="ui" x="500" y="29" text-anchor="middle" font-size="15" fill="#6B8AAD" letter-spacing="1.4">
+      nuno@ctw — stack.json
+    </text>
+    <rect x="0" y="46" width="1000" height="1" fill="#2FA9E8" opacity="0.25"/>
+
+    <!-- Line 1: static prompt + typed command -->
+    <text class="mono user" x="40" y="92">nuno@ctw</text>
+    <text class="mono punct" x="152" y="92">~</text>
+    <text class="mono" x="176" y="92" fill="#2FA9E8">$</text>
+    <g clip-path="url(#clipCmd)">
+      <text class="mono cmd" x="200" y="92">cat stack.json</text>
+    </g>
+
+    <!-- Line 2 -->
+    <g clip-path="url(#clipL2)">
+      <text class="mono punct" x="40" y="126">{</text>
+    </g>
+
+    <!-- Lines 3-6: the stack itself. EDIT ME: change the values below. -->
+    <g clip-path="url(#clipL3)">
+      <text class="mono" y="160">
+        <tspan class="key" x="64">"languages"</tspan><tspan class="punct" x="208">:</tspan><tspan class="punct" x="232">[</tspan><tspan class="str">"Java"</tspan><tspan class="punct">, </tspan><tspan class="str">"TypeScript"</tspan><tspan class="punct">, </tspan><tspan class="str">"JavaScript"</tspan><tspan class="punct">],</tspan>
+      </text>
+    </g>
+    <g clip-path="url(#clipL4)">
+      <text class="mono" y="194">
+        <tspan class="key" x="64">"backend"</tspan><tspan class="punct" x="208">:</tspan><tspan class="punct" x="232">[</tspan><tspan class="str">"Spring Boot"</tspan><tspan class="punct">, </tspan><tspan class="str">"Node.js"</tspan><tspan class="punct">],</tspan>
+      </text>
+    </g>
+    <g clip-path="url(#clipL5)">
+      <text class="mono" y="228">
+        <tspan class="key" x="64">"frontend"</tspan><tspan class="punct" x="208">:</tspan><tspan class="punct" x="232">[</tspan><tspan class="str">"React"</tspan><tspan class="punct">],</tspan>
+      </text>
+    </g>
+    <g clip-path="url(#clipL6)">
+      <text class="mono" y="262">
+        <tspan class="key" x="64">"platform"</tspan><tspan class="punct" x="208">:</tspan><tspan class="punct" x="232">[</tspan><tspan class="str">"Docker"</tspan><tspan class="punct">, </tspan><tspan class="str">"Git"</tspan><tspan class="punct">]</tspan>
+      </text>
+    </g>
+
+    <!-- Line 7 -->
+    <g clip-path="url(#clipL7)">
+      <text class="mono punct" x="40" y="296">}</text>
+    </g>
+
+    <!-- Line 8: prompt back, waiting -->
+    <g clip-path="url(#clipL8)">
+      <text class="mono user" x="40" y="330">nuno@ctw</text>
+      <text class="mono punct" x="152" y="330">~</text>
+      <text class="mono" x="176" y="330" fill="#2FA9E8">$</text>
+      <rect class="cursor" x="202" y="313" width="11" height="22" fill="#8FD4FF"/>
+    </g>
+
+    <!-- Scan sweep -->
+    <rect class="scan" x="0" y="0" width="1000" height="120" fill="url(#tscan)"/>
+
+    <rect x="0.5" y="0.5" width="999" height="359" rx="14" fill="none" stroke="#2FA9E8" stroke-opacity="0.25"/>
+  </g>
+</svg>
